@@ -1,5 +1,6 @@
 import React from "react";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 const ImageCard = ({ image }) => {
   if (!image) {
     return "Loading....";
@@ -8,12 +9,14 @@ const ImageCard = ({ image }) => {
   const tags = image.tags.split(",");
 
   return (
-    <div className="max-w-xs mx-10 rounded overflow-hidden shadow-lg">
-      <img
+    <div className="max-w-xs  mx-10 rounded overflow-hidden shadow-lg">
+      <LazyLoadImage
         src={webformatURL}
-        alt="unsplash images"
-        className="w-full object-cover h-60"
-      />
+        alt="pixabay-image"
+        className="w-full object-cover h-52"
+        effect="blur"
+        delayTime="350"
+      ></LazyLoadImage>
 
       <div className="px-6 py-4">
         <ul>
