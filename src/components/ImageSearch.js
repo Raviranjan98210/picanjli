@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import IconButton from "@material-ui/core/IconButton";
+import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 const ImageSearch = ({ searchText }) => {
   const [text, setText] = useState("");
 
@@ -8,7 +9,7 @@ const ImageSearch = ({ searchText }) => {
     searchText(text);
   };
   return (
-    <div className="max-w-sm rounded overflow-hidden my-10 mx-auto">
+    <div className="max-w-xs md:max-w-sm rounded overflow-hidden my-10 mx-auto ">
       <form onSubmit={onSubmit} className="w-full max-w-sm">
         <div className="flex items-center  border-b-2 border-teal-500 py-2">
           <input
@@ -17,12 +18,12 @@ const ImageSearch = ({ searchText }) => {
             type="text"
             placeholder="Search Image Term..."
           />
-          <button
-            className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+          <IconButton
+            className=" bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-primary  px-2 rounded"
             type="submit"
           >
-            Search
-          </button>
+            <SearchOutlinedIcon color="primary" />
+          </IconButton>
         </div>
       </form>
     </div>
