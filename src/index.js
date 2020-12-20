@@ -4,9 +4,8 @@ import App from "./App";
 import "./assets/output.css"; // Including tailwind css
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
+
   document.getElementById("root")
 );
 

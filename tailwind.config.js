@@ -33,6 +33,15 @@ module.exports = {
       },
       colors: {
         accent: "#ea2c62",
+        primary: "#7f00ff",
+        secondary: "#e100ff",
+      },
+
+      gradientColorStops: {
+        gradientPrimary: "#7f00ff",
+        gradientSecondary: "#e100ff",
+        gradientAccentPrimary: "#ee2a7b",
+        gradientAccentSecondary: "#ff7db8",
       },
     },
   },
