@@ -64,7 +64,7 @@ const ImageCard = ({ image }) => {
       </div>
       <div className="px-6 py-4">
         {tags.map((tag) => (
-          <span className="inline-block bg-indigo-400 mt-2 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2">
+          <span className="inline-block bg-indigo-400  mt-2 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2">
             # {tag.trim()}
           </span>
         ))}

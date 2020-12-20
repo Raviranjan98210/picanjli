@@ -1,0 +1,13 @@
+.heading {
+  display: grid;
+  grid-template-columns: 20rem max-content 20rem;
+  align-items: center;
+  grid-gap: 10px;
+}
+.heading::before,
+.heading::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #818cf8;
+}

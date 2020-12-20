@@ -3,9 +3,11 @@ import Loader from "react-loader-spinner";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import ImageCard from "../ImageCard";
-import ImageSearch from "../ImageSearch";
+import ImageSearch from "../ui/SearchBox/ImageSearch";
 import SkeltonLoading from "../SkeltonLoading";
 import api from "../../api/index";
+import MasonaryCustom from "../ui/ImageMasonry/ImageMasonry";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 const Home = () => {
   const [images, setImages] = useState([]);
@@ -23,7 +25,7 @@ const Home = () => {
   }, [term]);
 
   const fetchData = async () => {
-    setPage(page + 1);
+    await setPage(page + 1);
 
     const response = await api.getImages(term, page);
 
@@ -32,16 +34,17 @@ const Home = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div>
       <ImageSearch searchText={(text) => setTerm(text)} />
 
       <InfiniteScroll
+        className="px-5 md:px-10 py-6"
         dataLength={images.length}
         next={fetchData}
         hasMore={true}
         endMessage="You have seen all the images"
         loader={
-          <div className="flex  flex-col justify-center items-center my-5">
+          <div className="flex  flex-col justify-center items-center  my-5">
             <Loader type="Circles" color="#6C63FF" height={80} width={80} />
 
             {images.length === 0 && !isLoading ? (
@@ -54,7 +57,7 @@ const Home = () => {
           </div>
         }
       >
-        <div className="grid grid-cols-1 sm:grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-x-0 gap-7">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-x-0 gap-7">
           {isLoading ? (
             <>
               <SkeltonLoading noOfBoxes={8} />
@@ -64,7 +67,9 @@ const Home = () => {
               <ImageCard key={index} image={image} />
             ))
           )}
-        </div>
+        </div> */}
+
+        <MasonaryCustom images={images} />
       </InfiniteScroll>
     </div>
   );
