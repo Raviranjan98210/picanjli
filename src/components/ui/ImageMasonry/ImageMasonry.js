@@ -15,12 +15,12 @@ const MasonaryCustom = ({ images, colsXs = 1, colsSm = 2, colsMd = 4 }) => {
       <ResponsiveMasonry columnsCountBreakPoints={{ ...cols }}>
         {/*cols could be   */}
         <Masonry gutter="20px">
-          {images.map((image, i) => (
-            <div>
+          {images.map((image) => (
+            <div key={image.id}>
               <figure className={`${classes.image_container} `}>
                 <img
                   onClick={() => history.push(`/images/${image.id}`)}
-                  key={i}
+                  key={image.id}
                   src={image.largeImageURL}
                   style={{ width: "100%", display: "block" }}
                   alt=""

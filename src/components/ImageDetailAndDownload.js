@@ -19,7 +19,7 @@ const ImageDetailAndDownload = () => {
   useEffect(() => {
     (async () => {
       const responseImage = await api.getImage(imageId);
-      const responesImages = await api.getImages("", 1, 15);
+      const responesImages = await api.getImages("", 1, 15, "horizontal");
 
       setImage(responseImage.data.hits);
       setRelatedImages(responesImages.data.hits);
