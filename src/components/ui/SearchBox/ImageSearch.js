@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import classes from "./ImageSearch.module.css";
+import { useHistory } from "react-router-dom";
 const ImageSearch = ({ searchText }) => {
   const [text, setText] = useState("");
-
+  const history = useHistory();
   const onSubmit = (e) => {
     e.preventDefault();
-    searchText(text);
+
+    history.push(`/images/search/${text}`);
   };
   return (
     <form onSubmit={onSubmit}>

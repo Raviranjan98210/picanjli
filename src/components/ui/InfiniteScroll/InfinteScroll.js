@@ -1,5 +1,5 @@
 import React from "react";
-import SkeltonLoading from "../../SkeltonLoading";
+import SkeltonLoading from "../SkeltonLoading/SkeltonLoading";
 import Loader from "react-loader-spinner";
 import MasonaryCustom from "../ImageMasonry/ImageMasonry";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -7,7 +7,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 const CustomInfiniteScroll = ({ images, isLoading, fetchData, hello }) => {
   return (
     <>
-      {images ? (
+      {images.length > 0 ? (
         <InfiniteScroll
           className="px-5 md:px-10 py-6"
           dataLength={images.length}

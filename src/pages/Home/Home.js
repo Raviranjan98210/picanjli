@@ -28,15 +28,11 @@ const Home = () => {
     }
   };
 
-  const hello = () => {
-    console.log("hello");
-  };
   return (
     <CustomInfiniteScroll
       images={images}
       isLoading={isLoading}
       fetchData={fetchData}
-      hello={hello}
     />
   );
 };
