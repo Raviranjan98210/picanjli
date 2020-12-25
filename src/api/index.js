@@ -10,7 +10,13 @@ const instance = axios.create({
 });
 
 export default {
-  getImages: (term, page, perPage = "20", orientation = "all") =>
+  getImages: (
+    term,
+    page,
+    perPage = "20",
+    imageType = "all",
+    orientation = "all"
+  ) =>
     instance({
       method: "GET",
       url: "/",
@@ -18,6 +24,7 @@ export default {
         q: term,
         page: page,
         per_page: perPage,
+        image_type: imageType,
         safesearch: true,
         orientation,
       },

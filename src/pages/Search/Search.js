@@ -8,6 +8,7 @@ import {
   RESET_SEARCHED_IMAGES,
 } from "../../context/Types";
 import CustomInfiniteScroll from "../../components/ui/InfiniteScroll/InfinteScroll";
+import NoImagesFound from "../../components/ui/NoImagesFound/NoImagesFound";
 
 const Search = () => {
   const { searchTerm } = useParams();
@@ -38,11 +39,15 @@ const Search = () => {
   };
   return (
     <>
-      <CustomInfiniteScroll
-        images={searchedImages}
-        fetchData={fetchData}
-        isLoading={isLoading}
-      />
+      {searchedImages.length > 0 ? (
+        <CustomInfiniteScroll
+          images={searchedImages}
+          fetchData={fetchData}
+          isLoading={isLoading}
+        />
+      ) : (
+        <NoImagesFound />
+      )}
     </>
   );
 };

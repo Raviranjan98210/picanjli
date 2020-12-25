@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import api from "../../api/index";
 import DownloadButton from "../../components/ui/Buttons/DownloadButton/_index";
 import download from "../../utilities/imageDownload";
-import ImageRelated from "../../components/ImageDetail/ImageRelated";
+import ImageRelated from "../../components/ImageRelated/ImageRelated";
 import DetailCard from "../../components/ui/DetailCard/DetailCard";
 
 const ImageDetailAndDownload = () => {
@@ -13,8 +13,16 @@ const ImageDetailAndDownload = () => {
 
   useEffect(() => {
     (async () => {
+      window.scrollTo(0, 0);
+
       const responseImage = await api.getImage(imageId);
-      const responesImages = await api.getImages("", 1, 16, "horizontal");
+      const responesImages = await api.getImages(
+        "",
+        1,
+        15,
+        "all",
+        "horizontal"
+      );
 
       setImage(responseImage.data.hits);
       setRelatedImages(responesImages.data.hits);

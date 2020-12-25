@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import ImageDetailAndDownload from "./pages/DetailAndDownload/DetailAndDownload";
 import Header from "./components/app/Navbar/Navbar";
 import Search from "./pages/Search/Search";
+import ImageTypes from "./pages/ImageType/ImageTypes";
 
 function App() {
   return (
@@ -13,11 +14,14 @@ function App() {
         <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/images/search/:searchTerm">
+        <Route path="/images/search/:searchTerm" exact>
           <Search />
         </Route>
-        <Route path="/images/:imageId">
+        <Route path="/images/:imageId" exact>
           <ImageDetailAndDownload />
+        </Route>
+        <Route path="/images/types/:imageType" exact>
+          <ImageTypes />
         </Route>
       </Switch>
     </Router>

@@ -4,7 +4,7 @@ import Loader from "react-loader-spinner";
 import MasonaryCustom from "../ImageMasonry/ImageMasonry";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const CustomInfiniteScroll = ({ images, isLoading, fetchData, hello }) => {
+const CustomInfiniteScroll = ({ images, isLoading, fetchData }) => {
   return (
     <>
       {images.length > 0 ? (

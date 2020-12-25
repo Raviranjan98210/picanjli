@@ -13,7 +13,6 @@ const MasonaryCustom = ({ images, colsXs = 1, colsSm = 2, colsMd = 4 }) => {
   return (
     <div>
       <ResponsiveMasonry columnsCountBreakPoints={{ ...cols }}>
-        {/*cols could be   */}
         <Masonry gutter="20px">
           {images.map((image) => (
             <div key={image.id}>

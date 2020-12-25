@@ -4,6 +4,7 @@ import api from "../../api/index";
 import { GlobalStateValue } from "../../context/GlobalState";
 import { SET_IMAGES } from "../../context/Types";
 import CustomInfiniteScroll from "../../components/ui/InfiniteScroll/InfinteScroll";
+import HeroImage from "../../components/ui/HeroImage/HeroImage";
 
 const Home = () => {
   const [{ images }, dispatch] = GlobalStateValue();
@@ -29,11 +30,14 @@ const Home = () => {
   };
 
   return (
-    <CustomInfiniteScroll
-      images={images}
-      isLoading={isLoading}
-      fetchData={fetchData}
-    />
+    <>
+      <HeroImage />
+      <CustomInfiniteScroll
+        images={images}
+        isLoading={isLoading}
+        fetchData={fetchData}
+      />
+    </>
   );
 };
 

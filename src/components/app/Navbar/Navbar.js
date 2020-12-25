@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <nav
-      className={`bg-purple-500 shadow-xl h-20 bg-gradient-to-r from-gradientPrimary to-gradientSecondary w-full ${classes.navbar} mb-1`}
+      className={`bg-purple-500 shadow-xl h-20 bg-gradient-to-r from-gradientPrimary to-gradientSecondary w-full ${classes.navbar} `}
       style={{ top: visible ? "0" : "-80px" }}
     >
       <Link to="/" className={classes.navbar_logo}>
@@ -60,16 +60,16 @@ const Header = () => {
         </li>
         <li className={classes.nav_item} onClick={closeMobileMenu}>
           <Link to="/" className={classes.nav_links}>
-            Photos
+            Discover
           </Link>
         </li>
         <li className={classes.nav_item} onClick={closeMobileMenu}>
-          <Link to="/" className={classes.nav_links}>
+          <Link to="/images/types/illustration" className={classes.nav_links}>
             Illustrations
           </Link>
         </li>
         <li className={classes.nav_item} onClick={closeMobileMenu}>
-          <Link to="/" className={classes.nav_links}>
+          <Link to="/images/types/vector" className={classes.nav_links}>
             Vector
           </Link>
         </li>
