@@ -17,7 +17,9 @@ const Discover = ({ heading, sections }) => {
             key={index}
             className={`flex justify-center  items-center  w-full h-28 rounded-lg ${classes.discoverImg}   cursor-pointer relative overflow-hidden`}
             onClick={() =>
-              history.push(`/images/discover/${section.type}/${section.term}`)
+              history.push(
+                `/images/discover/${section.type}/${section.term.trim()}`
+              )
             }
           >
             <img

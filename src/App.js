@@ -7,7 +7,7 @@ import Search from "./pages/Search/Search";
 import ImageTypes from "./pages/ImageType/ImageTypes";
 import Discover from "./pages/Discover/Discover";
 import Orientation from "./pages/Orientation/Orientation";
-
+import Category from "./pages/Category/Category";
 function App() {
   return (
     <Router>
@@ -30,6 +30,9 @@ function App() {
         </Route>
         <Route path="/images/discover/orientation/:orientationType" exact>
           <Orientation />
+        </Route>
+        <Route path="/images/discover/category/:categoryTerm" exact>
+          <Category />
         </Route>
       </Switch>
     </Router>

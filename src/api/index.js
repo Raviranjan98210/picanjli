@@ -40,6 +40,16 @@ export default {
         safesearch: true,
       },
     }),
+  imageByCategory: (page, category) =>
+    instance({
+      method: "GET",
+      url: "/",
+      params: {
+        page,
+        category,
+        safesearch: true,
+      },
+    }),
 
   getImage: (imageId) =>
     instance({
