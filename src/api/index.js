@@ -30,6 +30,17 @@ export default {
       },
     }),
 
+  imageByOrientation: (page, orientation) =>
+    instance({
+      method: "GET",
+      url: "/",
+      params: {
+        page,
+        orientation,
+        safesearch: true,
+      },
+    }),
+
   getImage: (imageId) =>
     instance({
       method: "GET",

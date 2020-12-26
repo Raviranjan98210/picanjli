@@ -59,7 +59,7 @@ const Header = () => {
           </Link>
         </li>
         <li className={classes.nav_item} onClick={closeMobileMenu}>
-          <Link to="/" className={classes.nav_links}>
+          <Link to="/images/discover/all" className={classes.nav_links}>
             Discover
           </Link>
         </li>

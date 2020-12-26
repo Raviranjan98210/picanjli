@@ -5,6 +5,8 @@ import ImageDetailAndDownload from "./pages/DetailAndDownload/DetailAndDownload"
 import Header from "./components/app/Navbar/Navbar";
 import Search from "./pages/Search/Search";
 import ImageTypes from "./pages/ImageType/ImageTypes";
+import Discover from "./pages/Discover/Discover";
+import Orientation from "./pages/Orientation/Orientation";
 
 function App() {
   return (
@@ -22,6 +24,12 @@ function App() {
         </Route>
         <Route path="/images/types/:imageType" exact>
           <ImageTypes />
+        </Route>
+        <Route path="/images/discover/all" exact>
+          <Discover />
+        </Route>
+        <Route path="/images/discover/orientation/:orientationType" exact>
+          <Orientation />
         </Route>
       </Switch>
     </Router>

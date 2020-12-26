@@ -1,4 +1,6 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+
 import classes from "./DiscoverButton.module.css";
 const DicoverButton = ({
   width = "100%",
@@ -6,6 +8,7 @@ const DicoverButton = ({
   textColor = "gray",
   gradient, //could be true or false
 }) => {
+  const history = useHistory();
   return (
     <div className="text-center">
       <button
@@ -19,6 +22,7 @@ const DicoverButton = ({
              : ""
          } 
         `}
+        onClick={() => history.push("/images/discover/all")}
       >
         <span className={`md:text-lg text-sm text-${textColor} tracking-wider`}>
           Discover
