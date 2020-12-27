@@ -30,7 +30,7 @@ const Orientation = () => {
   const fetchData = async () => {
     await setPage(page + 1);
     try {
-      const response = await api.imageByOrientation(page, orientationType);
+      const response = await api.imagesByOrientation(page, orientationType);
       dispatch({
         type: SET_IMAGES_BY_ORIENTATION,
         payload: response.data.hits,

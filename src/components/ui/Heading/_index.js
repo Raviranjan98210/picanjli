@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "./Heading.module.css";
 const Heading = ({ text }) => {
   return (
     <div>

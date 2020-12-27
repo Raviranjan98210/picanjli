@@ -1,5 +1,4 @@
 import React from "react";
-import classe from "./DiscoverElement.module.css";
 import classes from "./DiscoverElement.module.css";
 import { useHistory } from "react-router-dom";
 const Discover = ({ heading, sections }) => {

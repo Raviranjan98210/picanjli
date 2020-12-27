@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { RESET_IMAGES_BY_TYPE, SET_IMAGES_BY_TYPE } from "../../context/Types";
+import {
+  RESET_IMAGES_BY_COLORS,
+  SET_IMAGES_BY_COLORS,
+} from "../../context/Types";
 
 import api from "../../api/index";
 
@@ -10,26 +13,26 @@ import SkeltonLoading from "../../components/ui/SkeltonLoading/SkeltonLoading";
 import CustomInfiniteScroll from "../../components/ui/InfiniteScroll/InfinteScroll";
 import NoImagesFound from "../../components/ui/NoImagesFound/NoImagesFound";
 
-const ImageType = () => {
-  const { type } = useParams();
+const Colors = () => {
+  const { color } = useParams();
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
-  const [{ imagesByType }, dispatch] = GlobalStateValue();
+  const [{ imagesByColor }, dispatch] = GlobalStateValue();
 
   useEffect(() => {
     dispatch({
-      type: RESET_IMAGES_BY_TYPE,
+      type: RESET_IMAGES_BY_COLORS,
     });
 
     fetchData();
-  }, [type]);
+  }, [color]);
 
   const fetchData = async () => {
     await setPage(page + 1);
     try {
-      const response = await api.imagesByType(page, type);
+      const response = await api.imagesByColor(page, color);
       dispatch({
-        type: SET_IMAGES_BY_TYPE,
+        type: SET_IMAGES_BY_COLORS,
         payload: response.data.hits,
       });
 
@@ -52,9 +55,9 @@ const ImageType = () => {
 
   return (
     <div>
-      {imagesByType.length > 0 ? (
+      {imagesByColor.length > 0 ? (
         <CustomInfiniteScroll
-          images={imagesByType}
+          images={imagesByColor}
           fetchData={fetchData}
           isLoading={isLoading}
         />
@@ -65,4 +68,4 @@ const ImageType = () => {
   );
 };
 
-export default ImageType;
+export default Colors;

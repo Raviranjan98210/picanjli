@@ -6,6 +6,10 @@ import {
   RESET_IMAGES_BY_ORIENTATION,
   SET_IMAGES_BY_CATEGORY,
   RESET_IMAGES_BY_CATEGORY,
+  SET_IMAGES_BY_COLORS,
+  RESET_IMAGES_BY_COLORS,
+  SET_IMAGES_BY_TYPE,
+  RESET_IMAGES_BY_TYPE,
 } from "./Types";
 
 export const initialState = {
@@ -13,6 +17,8 @@ export const initialState = {
   searchedImages: [],
   imagesByOrientation: [],
   imagesByCategory: [],
+  imagesByColor: [],
+  imagesByType: [],
 };
 
 const reducer = (state, action) => {
@@ -53,6 +59,26 @@ const reducer = (state, action) => {
       return {
         ...state,
         imagesByCategory: [],
+      };
+    case SET_IMAGES_BY_COLORS:
+      return {
+        ...state,
+        imagesByColor: [...state.imagesByColor, ...action.payload],
+      };
+    case RESET_IMAGES_BY_COLORS:
+      return {
+        ...state,
+        imagesByColor: [],
+      };
+    case SET_IMAGES_BY_TYPE:
+      return {
+        ...state,
+        imagesByType: [...state.imagesByType, ...action.payload],
+      };
+    case RESET_IMAGES_BY_TYPE:
+      return {
+        ...state,
+        imagesBytType: [],
       };
     default:
       return state;

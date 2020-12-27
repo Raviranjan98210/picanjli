@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { useHistory } from "react-router-dom";
 import classes from "./ImageMasonry.module.css";

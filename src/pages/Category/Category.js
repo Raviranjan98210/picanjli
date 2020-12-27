@@ -30,7 +30,7 @@ const Category = () => {
   const fetchData = async () => {
     await setPage(page + 1);
     try {
-      const response = await api.imageByCategory(page, categoryTerm);
+      const response = await api.imagesByCategory(page, categoryTerm);
       dispatch({
         type: SET_IMAGES_BY_CATEGORY,
         payload: response.data.hits,

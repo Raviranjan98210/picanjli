@@ -8,6 +8,8 @@ import ImageTypes from "./pages/ImageType/ImageTypes";
 import Discover from "./pages/Discover/Discover";
 import Orientation from "./pages/Orientation/Orientation";
 import Category from "./pages/Category/Category";
+import Colors from "./pages/Colors/Colors";
+
 function App() {
   return (
     <Router>
@@ -22,7 +24,7 @@ function App() {
         <Route path="/images/:imageId" exact>
           <ImageDetailAndDownload />
         </Route>
-        <Route path="/images/types/:imageType" exact>
+        <Route path="/images/types/:type" exact>
           <ImageTypes />
         </Route>
         <Route path="/images/discover/all" exact>
@@ -33,6 +35,9 @@ function App() {
         </Route>
         <Route path="/images/discover/category/:categoryTerm" exact>
           <Category />
+        </Route>
+        <Route path="/images/discover/colors/:color" exact>
+          <Colors />
         </Route>
       </Switch>
     </Router>
