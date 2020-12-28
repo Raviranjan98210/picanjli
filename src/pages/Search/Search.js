@@ -14,7 +14,7 @@ import SkeltonLoading from "../../components/ui/SkeltonLoading/SkeltonLoading";
 
 const Search = () => {
   const { searchTerm } = useParams();
-  const [{ searchedImages }, dispatch] = GlobalStateValue();
+  const [{ searchedImages, orientation_type }, dispatch] = GlobalStateValue();
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -29,7 +29,12 @@ const Search = () => {
   const fetchData = async () => {
     await setPage(page + 1);
     try {
-      const response = await api.getImages(searchTerm, page);
+      const response = await api.getImages(
+        searchTerm,
+        page,
+        20,
+        orientation_type
+      );
       dispatch({
         type: SET_SEARCHED_IMAGES,
         payload: response.data.hits,

@@ -39,6 +39,9 @@ function App() {
         <Route path="/images/discover/colors/:color" exact>
           <Colors />
         </Route>
+        <Route path="*">
+          <Home />
+        </Route>
       </Switch>
     </Router>
   );

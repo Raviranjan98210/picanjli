@@ -18,8 +18,8 @@ export default {
         q: term,
         page: page,
         per_page: perPage,
-        safesearch: true,
         orientation,
+        safesearch: true,
       },
     }),
 

@@ -10,6 +10,8 @@ import {
   RESET_IMAGES_BY_COLORS,
   SET_IMAGES_BY_TYPE,
   RESET_IMAGES_BY_TYPE,
+  SET_ORIENTATION_TYPE,
+  RESET_ORIENTATION_TYPE,
 } from "./Types";
 
 export const initialState = {
@@ -19,6 +21,7 @@ export const initialState = {
   imagesByCategory: [],
   imagesByColor: [],
   imagesByType: [],
+  orientation_type: "all",
 };
 
 const reducer = (state, action) => {
@@ -79,6 +82,17 @@ const reducer = (state, action) => {
       return {
         ...state,
         imagesBytType: [],
+      };
+
+    case SET_ORIENTATION_TYPE:
+      return {
+        ...state,
+        orientation_type: action.payload,
+      };
+    case RESET_ORIENTATION_TYPE:
+      return {
+        ...state,
+        orientation_type: "all",
       };
     default:
       return state;

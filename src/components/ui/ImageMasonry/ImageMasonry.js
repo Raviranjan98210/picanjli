@@ -1,6 +1,7 @@
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { useHistory } from "react-router-dom";
 import classes from "./ImageMasonry.module.css";
+import { animateScroll as scroll } from "react-scroll";
 
 const MasonaryCustom = ({ images, colsXs = 1, colsSm = 2, colsMd = 4 }) => {
   const history = useHistory();
@@ -9,6 +10,11 @@ const MasonaryCustom = ({ images, colsXs = 1, colsSm = 2, colsMd = 4 }) => {
     750: colsSm,
     900: colsMd,
   };
+
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <div>
       <ResponsiveMasonry columnsCountBreakPoints={{ ...cols }}>
@@ -45,6 +51,13 @@ const MasonaryCustom = ({ images, colsXs = 1, colsSm = 2, colsMd = 4 }) => {
           ))}
         </Masonry>
       </ResponsiveMasonry>
+
+      <button
+        onClick={scrollToTop}
+        className="outline-none focus:outline-none fixed bottom-6 right-1 bg-red-400 rounded-full h-8 w-8 p-2 flex justify-center items-center "
+      >
+        <i className="fas fa-arrow-up" style={{ color: "white" }}></i>
+      </button>
     </div>
   );
 };

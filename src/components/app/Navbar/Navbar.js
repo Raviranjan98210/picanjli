@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <nav
-      className={`bg-purple-500 shadow-xl h-20 bg-gradient-to-r from-gradientPrimary to-gradientSecondary w-full ${classes.navbar} `}
+      className={`bg-purple-500 shadow-xl h-20  bg-gradient-to-r  from-gradientPrimary to-gradientSecondary w-full ${classes.navbar} `}
       style={{ top: visible ? "0" : "-80px" }}
     >
       <Link to="/" className={classes.navbar_logo}>

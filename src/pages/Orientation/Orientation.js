@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   RESET_IMAGES_BY_ORIENTATION,
   SET_IMAGES_BY_ORIENTATION,
+  SET_ORIENTATION_TYPE,
 } from "../../context/Types";
 
 import api from "../../api/index";
@@ -24,6 +25,10 @@ const Orientation = () => {
       type: RESET_IMAGES_BY_ORIENTATION,
     });
 
+    dispatch({
+      type: SET_ORIENTATION_TYPE,
+      payload: orientationType,
+    });
     fetchData();
   }, [orientationType]);
 

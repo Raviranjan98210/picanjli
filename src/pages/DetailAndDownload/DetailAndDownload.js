@@ -16,13 +16,7 @@ const ImageDetailAndDownload = () => {
       window.scrollTo(0, 0);
 
       const responseImage = await api.getImage(imageId);
-      const responesImages = await api.getImages(
-        "",
-        1,
-        15,
-        "all",
-        "horizontal"
-      );
+      const responesImages = await api.getImages("", 1, 15, "horizontal");
 
       setImage(responseImage.data.hits);
       setRelatedImages(responesImages.data.hits);
@@ -30,7 +24,7 @@ const ImageDetailAndDownload = () => {
   }, [imageId]);
 
   return (
-    <div className="grid grid-cols-1  md:grid-cols-4 py-10 md:gap-5 px-5 md:px-10 bg-gray-50">
+    <div className="grid grid-cols-1  md:grid-cols-4 py-12 md:gap-5 px-5 md:px-10  bg-gray-50">
       <div className="col-span-4 md:col-span-3 md:relative md:pb-8/12  bg-gray-200 rounded-3xl ">
         {image.map((imageDetail) => (
           <img

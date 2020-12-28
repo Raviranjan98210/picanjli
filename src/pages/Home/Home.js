@@ -5,6 +5,7 @@ import { GlobalStateValue } from "../../context/GlobalState";
 import { SET_IMAGES } from "../../context/Types";
 import CustomInfiniteScroll from "../../components/ui/InfiniteScroll/InfinteScroll";
 import HeroImage from "../../components/ui/HeroImage/HeroImage";
+import { RESET_ORIENTATION_TYPE } from "../../context/Types";
 
 const Home = () => {
   const [{ images }, dispatch] = GlobalStateValue();
@@ -12,6 +13,9 @@ const Home = () => {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
+    dispatch({
+      type: RESET_ORIENTATION_TYPE,
+    });
     fetchData();
   }, []);
 
