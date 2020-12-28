@@ -54,7 +54,8 @@ const MasonaryCustom = ({ images, colsXs = 1, colsSm = 2, colsMd = 4 }) => {
 
       <button
         onClick={scrollToTop}
-        className="outline-none focus:outline-none fixed bottom-6 right-1 bg-red-400 rounded-full h-8 w-8 p-2 flex justify-center items-center "
+        className="outline-none focus:outline-none fixed bottom-6 right-1  rounded-full h-8 w-8 p-2 flex justify-center items-center"
+        style={{ backgroundColor: "#ff7db8" }}
       >
         <i className="fas fa-arrow-up" style={{ color: "white" }}></i>
       </button>
