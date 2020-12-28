@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/picanjli/static/css/main.32428648.chunk.css",
+    "main.js": "/picanjli/static/js/main.6964d4ac.chunk.js",
+    "main.js.map": "/picanjli/static/js/main.6964d4ac.chunk.js.map",
+    "runtime-main.js": "/picanjli/static/js/runtime-main.3cdb2ce0.js",
+    "runtime-main.js.map": "/picanjli/static/js/runtime-main.3cdb2ce0.js.map",
+    "static/js/2.3b26819b.chunk.js": "/picanjli/static/js/2.3b26819b.chunk.js",
+    "static/js/2.3b26819b.chunk.js.map": "/picanjli/static/js/2.3b26819b.chunk.js.map",
+    "index.html": "/picanjli/index.html",
+    "static/css/main.32428648.chunk.css.map": "/picanjli/static/css/main.32428648.chunk.css.map",
+    "static/js/2.3b26819b.chunk.js.LICENSE.txt": "/picanjli/static/js/2.3b26819b.chunk.js.LICENSE.txt",
+    "static/media/no_image_found.c8301e2a.svg": "/picanjli/static/media/no_image_found.c8301e2a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3cdb2ce0.js",
+    "static/js/2.3b26819b.chunk.js",
+    "static/css/main.32428648.chunk.css",
+    "static/js/main.6964d4ac.chunk.js"
+  ]
+}
